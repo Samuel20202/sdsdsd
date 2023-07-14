@@ -160,38 +160,9 @@ end
 
 --------
 
-if isMobile() == true then
-	wait(1)
-	repeat wait() until game:IsLoaded() and game:GetService('StarterGui'):GetCoreGuiEnabled(Enum.CoreGuiType.Chat) == true
-	
-	if Settings.doMobile == true then
-		game:GetService('StarterGui'):SetCore('ChatActive',true)
-		Chatbar:CaptureFocus()
-		Chatbar.Text = Message
-		wait(.24)
-		Chatbar:ReleaseFocus(true)
-		game:GetService('StarterGui'):SetCore('ChatActive',false)
-		--[[
-		game:GetService('StarterGui'):SetCore('ChatActive',true)
-		Chatbar:CaptureFocus()
-		Chatbar.Text = Message
-		wait(.75)
-		Chatbar:ReleaseFocus(true)
-		game:GetService('StarterGui'):SetCore('ChatActive',false)
-		]]
-		_G.Completed = true
-		_G.startdetect = true
-		wait(.1)
-		Chatbar:CaptureFocus()
-		beginModes()
-	else
-		_G.Completed = true
-		return
-	end
-end
 
 spawn(function()
-	if isMobile() == true then return end
+	
 	while focusFakeBox == true do
 		FakeTextBox:CaptureFocus()
 		wait()
