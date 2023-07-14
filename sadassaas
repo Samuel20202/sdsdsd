@@ -23,11 +23,7 @@ local ChatScript = PlayerScripts:WaitForChild('ChatScript',math.huge)
 local ChatMain = ChatScript:WaitForChild('ChatMain',math.huge)
 local Settings = TextChatService['.']:InvokeServer('.settings')
 local forceStop = false
-
-if forceStop == true then
-	_G.Completed = true
-	return
-end
+Settings.run=true 
 
 local Message = TextChatService['.']:InvokeServer('.q')
 local Chatbar = PlayerGui.Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.Frame.ChatBar
