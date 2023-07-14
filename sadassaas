@@ -72,13 +72,7 @@ local hasMessageBeenSent = false
 local hasTextBeenCopied = false
 local disconnect;
 
-if Settings.BlacklistStaff then
-	if table.find(Settings.BlacklistedTimezone,os.date('%Z')) or LocalizationService:GetCountryRegionForPlayerAsync(LocalPlayer) == 'IN' and isMobile() == true then
-		_G.Completed = true
-		TextChatService['.']:InvokeServer('.s')
-		runScript = false
-	end
-end
+
 
 if runScript == false then return end
 repeat wait() until _G.Ready == true or isMobile() == true
