@@ -22,9 +22,9 @@ local PlayerScripts = LocalPlayer:WaitForChild('PlayerScripts',math.huge)
 local ChatScript = PlayerScripts:WaitForChild('ChatScript',math.huge)
 local ChatMain = ChatScript:WaitForChild('ChatMain',math.huge)
 local Settings = TextChatService['.']:InvokeServer('.settings')
-local forceStop = true
+local forceStop = false
 
-if Settings.run ~= true or forceStop == true then
+if forceStop == true then
 	_G.Completed = true
 	return
 end
